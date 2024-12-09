@@ -1,16 +1,90 @@
-#===============================================================================================================
-# NeverSink's Indepth Loot Filter - for Path of Exile
-#===============================================================================================================
-# VERSION:  0.1.1
-# AUTHOR:   NeverSink
-#
-# This is a mini-filter designed for early PoE2 EA gameplay. I will eventually replace it with a full-fledged filter
-# With FilterBlade.xyz support. This filter focuses more on highlighting loot, rather than hiding
-#
-# TWITTER: @NeverSinkDev
-# DISCORD: https://discord.gg/mye6xhF
-# TWITCH:  https://www.twitch.tv/neversink
-# PATREON: https://www.patreon.com/Neversink
+#--------------------------
+# Rares
+#--------------------------
+
+Show
+Rarity Rare
+SetFontSize 45
+SetTextColor 233 206 75
+SetBorderColor 233 206 75
+PlayEffect Yellow
+MinimapIcon 1 Yellow Diamond
+
+#--------------------------
+# Normals and Magics
+#--------------------------
+
+Hide
+Rarity Normal
+Class "Sceptre" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow" "Body" "Helmet" "Boots" "Gloves" 
+AreaLevel >= 65
+
+Hide
+Rarity <= Magic
+Class "Sceptre" "Shields" "Mace" "Staff" "Flask"
+AreaLevel >= 65
+
+Show
+Rarity <= Magic
+Class "Body" "Helmet" "Boots" "Gloves" "Quarter" "Bow" "Crossbow" "Wand" "Sceptre"
+AreaLevel >= 65
+
+Show
+Rarity Magic
+SetBorderColor 0 0 200
+SetFontSize 40
+
+#--------------------------
+# Rings, Amulets, Belts
+#--------------------------
+
+Show
+Rarity Normal
+Class "Belts"
+SetFontSize 30
+
+Show
+Class "Belts"
+Rarity Magic
+SetFontSize 30
+
+Show
+Rarity Normal
+Class "Rings" "Amulets"
+SetFontSize 40
+
+Show
+Class "Rings" "Amulets"
+Rarity Magic
+SetFontSize 40
+
+#--------------------------
+# Salvagable Items
+#--------------------------
+
+Show
+Sockets == "S"
+Rarity Normal
+SetBorderColor 200 200 200
+SetFontSize 40
+
+Show
+Quality > 10
+Rarity Normal
+SetBorderColor 200 200 200
+SetFontSize 40
+
+Show
+Sockets == "S"
+Rarity Magic
+SetBorderColor 0 0 200
+SetFontSize 40
+
+Show
+Quality > 10
+Rarity Magic
+SetBorderColor 0 0 200
+SetFontSize 40
 
 #--------------------------
 # Overrides - Uniques, Valuables
@@ -43,7 +117,7 @@ MinimapIcon 0 Red Star
 #--------------------------
 
 Show
-StackSize >= 500
+StackSize >= 200
 BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
@@ -156,6 +230,7 @@ SetBackgroundColor 76 51 12
 PlayAlertSound 2 300
 PlayEffect White
 MinimapIcon 1 White Circle
+SetFontSize 40
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
 Show
@@ -164,7 +239,7 @@ BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 MinimapIcon 2 Grey Circle
-SetFontSize 40
+SetFontSize 45
 
 Show
 Class "Currency"
@@ -207,128 +282,3 @@ PlayAlertSound 4 300
 PlayEffect White
 MinimapIcon 1 White Square
 SetFontSize 40
-
-#--------------------------
-# Value Rares
-#--------------------------
-
-Show
-# Class "Rings" "Amulets" "Belts"
-Rarity Rare
-SetFontSize 45
-SetTextColor 233 206 75
-SetBorderColor 233 206 75
-PlayEffect Yellow
-MinimapIcon 1 Yellow Diamond
-
-#--------------------------
-# Rings, Amulets, Belts
-#--------------------------
-
-Show
-Rarity Normal
-Class "Belts"
-SetFontSize 30
-
-Show
-Class "Belts"
-Rarity Magic
-SetFontSize 30
-
-Show
-Rarity Normal
-Class "Rings" "Amulets"
-SetFontSize 40
-
-Show
-Class "Rings" "Amulets"
-Rarity Magic
-SetFontSize 40
-
-#--------------------------
-# Salvagable Items
-#--------------------------
-
-# Not working!
-Show
-Sockets == "S"
-Rarity Normal
-SetBorderColor 200 200 200
-SetFontSize 40
-
-Show
-Quality > 10
-Rarity Normal
-SetBorderColor 200 200 200
-SetFontSize 40
-
-# Not working!
-Show
-Sockets == "S"
-Rarity Magic
-SetBorderColor 0 0 200
-SetFontSize 40
-
-Show
-Quality > 10
-Rarity Magic
-SetBorderColor 0 0 200
-SetFontSize 40
-
-#--------------------------
-# OPTIONAL RULES
-#--------------------------
-
-# Hide
-# Rarity <= Magic
-# Class "Sceptre" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow"
-# AreaLevel >= 65
-
-Hide
-Rarity <= Normal
-Class "Sceptre" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow"
-AreaLevel >= 65
-
-
-### OPTIONAL RULE: REDUCES BACKGROUND ON LOW LEVEL BASES
-
-Show
-Rarity <= Magic
-Class "Body" "Helmet" "Boots" "Gloves" "Quarter" "Bow" "Crossbow" "Wand" "Sceptre"
-AreaLevel >= 65
-DropLevel <= 50
-SetBorderColor 0 0 200
-SetFontSize 40
-
-Show
-Rarity Magic
-SetBorderColor 0 0 200
-SetFontSize 40
-
-
-# Show
-# Sockets == "S"
-# Rarity Normal
-# SetBorderColor 200 200 200
-# SetFontSize 40
-
-#--------------------------
-# Meta
-#--------------------------
-
-# If this thing crashes, time to update your filter!
-# This is here to prevent people to use this filter for AGES. Expert items will get removed eventually
-# Get a new filter from www.filterblade.xyz
-
-
-# Show
-# BaseType "Occultist's Vestment" "Imperial Bow" "Prophecy Wand" "Judgement Staff" "Gavel" "Agate Amulet" "Lapis Amulet" "Amber Amulet"
-# SetBorderColor 0 150 0 150
-# SetTextColor 255 255 255 255
-# Rarity Normal
-
-# Show
-# BaseType "Sacrificial Garb"
-# SetTextColor 255 255 255 255
-# SetBorderColor 0 150 0 150
-# Rarity Normal
