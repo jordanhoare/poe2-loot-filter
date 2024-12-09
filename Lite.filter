@@ -30,7 +30,7 @@ SetFontSize 40
 Show
 Class "Currency"
 BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
-SetFontSize 45
+SetFontSize 40
 SetTextColor 255 0 0 255
 SetBorderColor 255 0 0 255
 SetBackgroundColor 255 255 255 255
@@ -95,7 +95,7 @@ Class "Jewel"
 Rarity Rare
 SetTextColor 0 240 190
 SetBorderColor 0 240 190
-SetFontSize 40
+SetFontSize 45
 MinimapIcon 2 Cyan Triangle
 PlayEffect Cyan
 
@@ -109,6 +109,11 @@ SetFontSize 40
 PlayEffect Cyan Temp
 
 # Special B Tier - Any Runes and Charms
+Hide
+Rarity <= Normal
+BaseType " Rune" " Charm"
+AreaLevel >= 65
+
 Show 
 BaseType " Rune" " Charm"
 SetTextColor 0 240 190
@@ -159,6 +164,7 @@ BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 MinimapIcon 2 Grey Circle
+SetFontSize 40
 
 Show
 Class "Currency"
@@ -207,9 +213,9 @@ SetFontSize 40
 #--------------------------
 
 Show
-Class "Rings" "Amulets" "Belts"
+# Class "Rings" "Amulets" "Belts"
 Rarity Rare
-SetFontSize 40
+SetFontSize 45
 SetTextColor 233 206 75
 SetBorderColor 233 206 75
 PlayEffect Yellow
@@ -232,12 +238,12 @@ SetFontSize 30
 Show
 Rarity Normal
 Class "Rings" "Amulets"
-SetFontSize 45
+SetFontSize 40
 
 Show
 Class "Rings" "Amulets"
 Rarity Magic
-SetFontSize 45
+SetFontSize 40
 
 #--------------------------
 # Salvagable Items
@@ -248,53 +254,63 @@ Show
 Sockets == "S"
 Rarity Normal
 SetBorderColor 200 200 200
-SetFontSize 35
+SetFontSize 40
 
 Show
 Quality > 10
 Rarity Normal
 SetBorderColor 200 200 200
-SetFontSize 35
+SetFontSize 40
 
 # Not working!
 Show
 Sockets == "S"
 Rarity Magic
 SetBorderColor 0 0 200
-SetFontSize 35
+SetFontSize 40
 
 Show
 Quality > 10
 Rarity Magic
 SetBorderColor 0 0 200
-SetFontSize 35
+SetFontSize 40
 
 #--------------------------
 # OPTIONAL RULES
 #--------------------------
-# TO ENABLE RULES, REMOVE THE # AT THE START OF THE LINE
 
-### OPTIONAL RULE: Hide random bases
-# REMOVE THE BASES YOU --DO-- WANT TO SEE BEFORE SETTING TO HIDE
+# Hide
+# Rarity <= Magic
+# Class "Sceptre" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow"
+# AreaLevel >= 65
 
 Hide
 Rarity <= Normal
-Class "Flask" "Body" "Helmet" "Boots" "Gloves" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow" "Wand" "Sceptre"
+Class "Sceptre" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow"
 AreaLevel >= 65
 
-Hide
-Rarity <= Magic
-Class "Flask" "Body" "Helmet" "Boots" "Gloves" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow" "Wand" "Sceptre"
-AreaLevel >= 65
 
 ### OPTIONAL RULE: REDUCES BACKGROUND ON LOW LEVEL BASES
 
 Show
 Rarity <= Magic
-Class "Flask" "Body" "Helmet" "Boots" "Gloves" "Shields" "Quiver" "Mace" "Staff" "Quarter" "Bow" "Crossbow" "Wand" "Sceptre"
+Class "Body" "Helmet" "Boots" "Gloves" "Quarter" "Bow" "Crossbow" "Wand" "Sceptre"
 AreaLevel >= 65
 DropLevel <= 50
-SetBackgroundColor 0 0 0 125
+SetBorderColor 0 0 200
+SetFontSize 40
+
+Show
+Rarity Magic
+SetBorderColor 0 0 200
+SetFontSize 40
+
+
+# Show
+# Sockets == "S"
+# Rarity Normal
+# SetBorderColor 200 200 200
+# SetFontSize 40
 
 #--------------------------
 # Meta
